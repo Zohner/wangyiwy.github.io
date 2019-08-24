@@ -11,16 +11,16 @@ $clock.append(
     $group1.clone().attr('id', 'num-3'),
     $group1.clone().attr('id', 'num-4'),
     $newDots.clone(),
-    $group1.clone().attr('id', 'num-5'),
     $group1.clone().attr('id', 'num-6'),
+    $group1.clone().attr('id', 'num-5'),
     '<br style="clear:both" />'
 );
 
 let $group2 = $('#num-2'),
     $group3 = $('#num-3'),
     $group4 = $('#num-4'),
-    $group5 = $('#num-5'),
-    $group6 = $('#num-6');
+    $group5 = $('#num-6'),
+    $group6 = $('#num-5');
 
 function updateClock() {
     let now = new Date();

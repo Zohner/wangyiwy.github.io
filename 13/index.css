@@ -18,7 +18,7 @@ body {
     border-radius: 50%;
     position: relative;
     background: #1f1f1f; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, #1f1f1f 25%, #1f1f1f 47%, #000000 100%, #000000 100%); /* FF3.6+ */
+    background: -moz-radial-gradient(center, ellipse cover, #1f1f1f 25%, #1f1f1f 47%, #000000 100%, #000000 100%); /* FF3.5+ */
     background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(25%, #1f1f1f), color-stop(47%, #1f1f1f), color-stop(100%, #000000), color-stop(100%, #000000)); /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(center, ellipse cover, #1f1f1f 25%, #1f1f1f 47%, #000000 100%, #000000 100%); /* Chrome10+,Safari5.1+ */
     background: -o-radial-gradient(center, ellipse cover, #1f1f1f 25%, #1f1f1f 47%, #000000 100%, #000000 100%); /* Opera 12+ */

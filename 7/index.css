@@ -1,66 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:700);
 
 html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
 body {
-    background: #333;
+    background: hsla(180, 95%, 15%, 1);
+    font-family: 'Noto Serif', serif;
+    font-size: 4em;
+    overflow: hidden;
 }
 
-#clock {
-    font-family: 'Open Sans', sans-serif;
-    position: fixed;
-    color: #999;
-    transition: all ease 1s;
-    width: 450px;
-    font-size: 7em;
-}
-
-#cube {
-    position: fixed;
-    transition: all linear 1s;
-    -webkit-perspective: 3000px;
-    perspective: 3000px;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
-
-.side {
-    background-color: rgba(32, 32, 32, .5);
-    border-style: solid;
-    border-color: #777;
-    border-width: 2px;
-    text-align: center;
-}
-
-.top {
-    -webkit-transform: rotateX(90deg) translateZ(3.6em) translateY(-3.5em);
-    transform: rotateX(90deg) translateZ(3.6em) translateY(-3.5em);
-    width: 450px;
-    height: 7em;
-}
-
-.left {
-    -webkit-transform: rotateY(-90deg) translateZ(3.6em) translateY(-14.5em) translateX(-3.4em);
-    transform: rotateY(-90deg) translateZ(3.6em) translateY(-14.5em) translateX(-3.4em);
-    width: 7em;
-    height: 9.6em;
-}
-
-.right {
-    -webkit-transform: rotateY(90deg) translateZ(24.75em) translateX(3.6em) translateY(-24.3em);
-    transform: rotateY(90deg) translateZ(24.75em) translateX(3.6em) translateY(-24.3em);
-    width: 7em;
-    height: 9.6em;
-}
-
-.bottom {
-    -webkit-transform: rotateX(-90deg) translateZ(-1.1em) translateY(3.5em);
-    transform: rotateX(-90deg) translateZ(-1.1em) translateY(3.5em);
-    width: 450px;
-    height: 7em;
+canvas {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

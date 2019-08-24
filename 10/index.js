@@ -1,174 +1,145 @@
+(function() {
+    var appendEls, attachEvents, enableTransitions, nthDigit, reset, setAttributes, setClasses, startClock, tick;
 
-Element.Properties.transform = {
+    nthDigit = function(int, nth) {
+        return parseInt(int.toString().substr(nth, 1));
+    };
 
-    set: function(transform){
-        var property = 'transform';
-        if(Browser.chrome) property = 'WebkitTransform';
-        if(Browser.firefox)  property = 'MozTransform';
-        if(Browser.opera) property = 'OTransform';
+    setAttributes = function() {
+        var hours, minutes, seconds, timeNow;
+        timeNow = new Date();
+        hours = timeNow.getHours();
+        if (hours > 12) {
+            hours -= 12;
+        }
+        $('.js-clock[data-dur="hh"]').attr('data-cur', hours + 1);
+        minutes = timeNow.getMinutes();
+        if (minutes < 10) {
+            $('.js-clock[data-dur="mm"]').attr('data-cur', 1);
+            $('.js-clock[data-dur="m"]').attr('data-cur', minutes + 1);
+        } else {
+            $('.js-clock[data-dur="mm"]').attr('data-cur', nthDigit(minutes, 0) + 1);
+            $('.js-clock[data-dur="m"]').attr('data-cur', nthDigit(minutes, 1) + 1);
+        }
+        seconds = timeNow.getSeconds();
+        minutes = timeNow.getMinutes();
+        if (seconds < 10) {
+            $('.js-clock[data-dur="ss"]').attr('data-cur', 1);
+            return $('.js-clock[data-dur="s"]').attr('data-cur', seconds + 1);
+        } else {
+            $('.js-clock[data-dur="ss"]').attr('data-cur', nthDigit(seconds, 0) + 1);
+            return $('.js-clock[data-dur="s"]').attr('data-cur', nthDigit(seconds, 1) + 1);
+        }
+    };
 
-        this.style[property] = transform;
-        this.store('transform', transform);
-    },
+    tick = function($el) {
+        var $active;
+        $active = $el.find('.dial--active');
+        $active.removeClass('dial--active');
+        $active.addClass('dial--flipped');
+        $active.next().removeClass('dial--next').addClass('dial--active');
+        $active.next().next().addClass('dial--next').removeClass('dial--later');
+        if ($active.next().hasClass('dial--last')) {
+            return setTimeout((function() {
+                return reset($el);
+            }), 300, $el);
+        }
+    };
 
-    get: function(){
-        return this.retrieve('transform', '');
-    }
+    enableTransitions = function($el) {
+        return $el.removeClass('transitions-off');
+    };
 
-};
+    reset = function($el) {
+        $el.addClass('transitions-off');
+        $el.children().removeClass('dial--flipped');
+        $el.children().removeClass('dial--active');
+        $el.children().removeClass('dial--next');
+        $el.children().first().addClass('dial--active');
+        $el.children(':nth-child(2)').addClass('dial--next');
+        $el.children(':nth-child(n+3)').addClass('dial--later');
+        setTimeout((function() {
+            return enableTransitions($el);
+        }), 300, $el);
+        tick($el);
+        if ($el.attr('data-dur') === 's') {
+            $(document).trigger('10s');
+        }
+        if ($el.attr('data-dur') === 'ss') {
+            $(document).trigger('60s');
+        }
+        if ($el.attr('data-dur') === 'm') {
+            $(document).trigger('10m');
+        }
+        if ($el.attr('data-dur') === 'mm') {
+            return $(document).trigger('60m');
+        }
+    };
 
-Element.implement({
+    setClasses = function($el) {
+        var curIndex;
+        curIndex = parseInt($el.attr('data-cur'));
+        $el.children(':nth-child(' + curIndex + ')').addClass('dial--active');
+        $el.children(':nth-child(' + (curIndex + 1) + ')').addClass('dial--next');
+        $el.children(':lt(' + curIndex + ')').addClass('dial--flipped');
+        $el.children(':gt(' + curIndex + ')').addClass('dial--later');
+        return tick($el);
+    };
 
-    setTransform: function(value){
-        return this.set('transform', value);
-    },
+    startClock = function() {
+        return setInterval(function() {
+            return tick($('.js-clock[data-dur="s"]'));
+        }, 1000);
+    };
 
-    getTransform: function(){
-        return this.get('transform');
-    }
+    appendEls = function() {
+        return $('.js-clock').each(function() {
+            var $el, end, k, l, start;
+            $el = $(this);
+            start = parseInt($(this).attr('data-start'));
+            end = parseInt($(this).attr('data-end'));
+            k = start;
+            while (k <= end) {
+                if ((k + 1) > end) {
+                    l = 0;
+                } else {
+                    l = k + 1;
+                }
+                $el.append('<div class="dial"><span>' + k + '</span><span>' + l + '</span>');
+                k++;
+            }
+            $el.prepend('<div class="dial"><span>0</span><span>0</span></div>');
+            $el.append('<div class="dial dial--last"><span>0</span><span>0</span></div>');
+            return setClasses($el);
+        });
+    };
 
-});
-var $hourWrap = $$('.hour-wrap');
-var $hourFront = $hourWrap.getElement('div.front');
-var $hourBack = $hourWrap.getElement('div.back')
-var $hourTop = $hourWrap.getElement('div.digit-top');
-var $hourBottom = $hourWrap.getElement('div.digit-bottom .front');
+    attachEvents = function() {
+        $('.js-clock').on('click', function(e) {
+            var $active, $el;
+            e.preventDefault();
+            $el = $(this);
+            $active = $el.find('.dial--active');
+            return tick($el);
+        });
+        $(document).on('10s', function() {
+            return tick($('.js-clock[data-dur="ss"]'));
+        });
+        $(document).on('60s', function() {
+            return tick($('.js-clock[data-dur="m"]'));
+        });
+        return $(document).on('10m', function() {
+            tick($('.js-clock[data-dur="mm"]'));
+            $(document).on('60m', function() {});
+            return tick($('.js-clock[data-dur="hh"]'));
+        });
+    };
 
-var $minWrap = $$('.min-wrap');
-var $minFront = $minWrap.getElement('div.front');
-var $minBack = $minWrap.getElement('div.back');
-var $minTop = $minWrap.getElement('div.digit-top');
-var $minBottom = $minWrap.getElement('div.digit-bottom .front');
+    $(document).ready(function() {
+        setAttributes();
+        appendEls();
+        attachEvents();
+        return startClock();
+    });
 
-
-var $secWrap = $$('.sec-wrap');
-var $secFront = $secWrap.getElement('div.front');
-var $secBack = $secWrap.getElement('div.back');
-var $secTop = $secWrap.getElement('div.digit-top');
-var $secBottom = $secWrap.getElement('div.digit-bottom .front');
-
-var currentHour = 0;
-var currentMin = 0;
-var currentSec = 0;
-
-var setClock = function()
-{
-    var time = new Date();
-    var hour = time.getHours();
-    var min = time.getMinutes();
-    var sec = time.getSeconds();
-
-    if(currentHour != hour)
-    {
-        currentHour = hour;
-        var hourText = hour < 10 ? '0'+hour : hour;
-
-        // make el to sit behind the top digit
-        var $newHourTop = new Element('div', {class: 'digit-top', html: $hourTop.get('html'), style: 'z-index:1;'})
-        var $newHourFront = $newHourTop.getElement('div.front');
-        var $newHourBack = $newHourTop.getElement('div.back');
-
-        $newHourFront.set('text', hourText);
-        $hourWrap.adopt($newHourTop);
-
-        // start the animation
-        $hourFront.setTransform('rotateX(180deg)');
-        $hourBack.setTransform('rotateX(0deg)');
-        $hourBack.setStyle('zIndex', 40);
-
-        // set the min back
-        $hourBack.set('text', hourText);
-
-        (function()
-        {
-            $hourTop.destroy();
-            $hourFront.destroy();
-            $hourBack.destroy();
-
-            $hourTop = $newHourTop;
-            $hourFront = $newHourFront;
-            $hourBack = $newHourBack;
-
-            $hourTop.setStyle('zIndex', 10);
-            $hourBottom.set('text', hourText);
-        }).delay(800);
-    }
-
-    if(currentMin != min)
-    {
-        currentMin = min;
-        var minText = min < 10 ? '0'+min : min;
-
-        // make el to sit behind the top digit
-        var $newMinTop = new Element('div', {class: 'digit-top', html: $minTop.get('html'), style: 'z-index:1;'})
-        var $newMinFront = $newMinTop.getElement('div.front');
-        var $newMinBack = $newMinTop.getElement('div.back');
-
-        $newMinFront.set('text', minText);
-        $minWrap.adopt($newMinTop);
-
-        // start the animation
-        $minFront.setTransform('rotateX(180deg)');
-        $minBack.setTransform('rotateX(0deg)');
-        $minBack.setStyle('zIndex', 40);
-
-        // set the min back
-        $minBack.set('text', minText);
-
-        (function()
-        {
-            $minTop.destroy();
-            $minFront.destroy();
-            $minBack.destroy();
-
-            $minTop = $newMinTop;
-            $minFront = $newMinFront;
-            $minBack = $newMinBack;
-
-            $minTop.setStyle('zIndex', 10);
-            $minBottom.set('text', minText);
-        }).delay(800);
-    }
-
-
-    if(currentSec != sec)
-    {
-        currentSec = sec;
-        var secText = sec < 10 ? '0'+sec : sec;
-
-        // make el to sit behind the top digit
-        var $newSecTop = new Element('div', {class: 'digit-top', html: $secTop.get('html'), style: 'z-index:1;'})
-        var $newSecFront = $newSecTop.getElement('div.front');
-        var $newSecBack = $newSecTop.getElement('div.back');
-
-        $newSecFront.set('text', secText);
-        $secWrap.adopt($newSecTop);
-
-        // start the animation
-        $secFront.setTransform('rotateX(180deg)');
-        $secBack.setTransform('rotateX(0deg)');
-        $secBack.setStyle('zIndex', 40);
-
-        // set the min back
-        $secBack.set('text', secText);
-
-        (function()
-        {
-            $secTop.destroy();
-            $secFront.destroy();
-            $secBack.destroy();
-
-            $secTop = $newSecTop;
-            $secFront = $newSecFront;
-            $secBack = $newSecBack;
-
-            $secTop.setStyle('zIndex', 10);
-            $secBottom.set('text', secText);
-        }).delay(800);
-    }
-
-    //$hourEls.set('text', hour);
-
-}
-
-setClock.periodical(1000);
+}).call(this);
