@@ -7,16 +7,40 @@
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-<div class='clock'>
-    <div class='hour'></div>
-    <div class='minutes'></div>
-    <div class='seconds'></div>
-</div>
-<div class='week'>
-    <div class='day'></div>
-    <div class='month'></div>
-    <div class='year'></div>
-</div>
-<script src="index.js"></script>
+<section>
+    <div class="label">SEIKO</div>
+    <div class="hourhand"></div>
+    <div class="secondhand"></div>
+    <div class="minutehand"></div>
+    <div class="hour12"></div>
+    <div class="hour1"></div>
+    <div class="hour2"></div>
+    <div class="hour3"></div>
+    <div class="hour4"></div>
+    <div class="hour5"></div>
+</section>
+<script>
+    let hrHand = document.querySelector('.hourhand'),
+        minHand = document.querySelector('.minutehand'),
+        secHand = document.querySelector('.secondhand');
+
+    function clock() {
+        let dt = new Date(),
+            hr = dt.getHours(),
+            min = dt.getMinutes(),
+            sec = dt.getSeconds();
+
+        let hrDeg = -90 + (hr * 30) + (min * 30 / 60),
+            minDeg = -90 + (min * 6) + (sec * 6 / 60),
+            secDeg = -90 + (sec * 6);
+
+        hrHand.style.transform = "rotate(" + hrDeg + "deg)";
+        minHand.style.transform = "rotate(" + minDeg + "deg)";
+        secHand.style.transform = "rotate(" + secDeg + "deg)";
+        setTimeout(clock, 1000)
+    }
+
+    clock();
+</script>
 </body>
 </html>
