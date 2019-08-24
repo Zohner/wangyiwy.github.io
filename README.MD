@@ -20,4 +20,4 @@
 - 17:[https://codepen.io/nilbog/pen/GJKRyZ](https://codepen.io/nilbog/pen/GJKRyZ)
 - 18:[https://codepen.io/pavlovsk/pen/eNJvqM](https://codepen.io/pavlovsk/pen/eNJvqM)
 - 19:[https://codepen.io/DawidKrajewski/pen/pvJaYa](https://codepen.io/DawidKrajewski/pen/pvJaYa)
-- 20:[https://codepen.io/kidGodzilla/pen/myYywQ](https://codepen.io/kidGodzilla/pen/myYywQ)
+- 20:[https://codepen.io/rodnylobos/pen/KoJxq](https://codepen.io/rodnylobos/pen/KoJxq)
