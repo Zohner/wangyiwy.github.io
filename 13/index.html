@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+<div>
+    <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"/>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <div class="onoffswitch-inner"></div>
+            <div class="onoffswitch-switch"></div>
+        </label>
+    </div>
+    <div class="clock">
+        <div id="centerRed"></div>
+        <div id="centerYellow"></div>
+        <div id="centerBlack"></div>
+        <div id="seconds">
+            <div id="secondsBox">
+                <div id="secondsBoxLight" class="glow-js"></div>
+            </div>
+        </div>
+        <div id="minutes">
+            <div id="octagon">
+                <div id="minutesBoxLight" class="glow-js"></div>
+            </div>
+        </div>
+        <div id="hours">
+            <div id="octagonH">
+                <div id="hoursBoxLight" class="glow-js"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

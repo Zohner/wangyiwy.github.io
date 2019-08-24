@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .dot, .dotfilled, .blank {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+
+            background-repeat: no-repeat;
+        }
+
+        span {
+            line-height: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 10px;
+        }
+
+        #digital {
+            font-family: Courier New, Courier, monospace;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+
+        #actual {
+            font-family: Courier New, Courier, monospace;
+            font-size: 30px;
+            font-weight: bold;
+            color: #82FA58;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div id="bincont"></div>
+    <div id="digital"></div>
+    <div id="actual"></div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

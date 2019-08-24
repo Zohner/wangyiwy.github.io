@@ -1,0 +1,191 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #3b0209;
+}
+
+#clock {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.author, .author a {
+    color: white;
+}
+
+.author {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0.7;
+    font-family: sans-serif;
+}
+
+.group {
+    float: left;
+    margin-right: 90px;
+    -webkit-transform: skew(-5deg);
+    -moz-transform: skew(-5deg);
+    -ms-transform: skew(-5deg);
+    -o-transform: skew(-5deg);
+    transform: skew(-5deg);
+}
+
+.num-9 .ver.left.low, .num-0 .hor.mid, .group div {
+    opacity: 0.1;
+}
+
+.dots div {
+    position: relative;
+}
+
+.hexagon {
+    position: relative;
+}
+
+.hexagon.hor {
+    width: 100px;
+    height: 50px;
+}
+
+.hexagon.ver {
+    width: 50px;
+    height: 150px;
+}
+
+.hexagon.left {
+    margin-left: -52px;
+    margin-top: 2px;
+}
+
+.hexagon.left.low {
+    margin-left: -52px;
+}
+
+.hexagon.right {
+    margin-left: 101px;
+    margin-top: -150px;
+}
+
+.hexagon.right.low {
+    margin-left: 101px;
+}
+
+.hexagon.hor.mid {
+    margin-top: 1px;
+}
+
+.hexagon.hor.low {
+    margin-top: 1px;
+}
+
+.dots div {
+    background: #FA4031;
+}
+
+.hexagon {
+    background: #FA4031;
+}
+
+.hexagon:before, .hexagon:after {
+    background: #FA4031;
+}
+
+.hexagon:before, .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.hexagon.hor:before {
+    left: -18px;
+    top: 8px;
+}
+
+.hexagon.hor:after {
+    right: -18px;
+    top: 8px;
+}
+
+.hexagon.ver:before {
+    top: -18px;
+    left: 8px;
+}
+
+.hexagon.ver:after {
+    bottom: -18px;
+    left: 8px;
+}
+
+#num-6 {
+    margin-right: 0;
+}
+
+.cp {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 10px;
+    -webkit-border-top-left-radius: 16px;
+    color: #575757;
+    opacity: 0.2;
+    transition: opacity 1s ease-out;
+}
+
+.cp:hover {
+    opacity: 1;
+}
+
+.dots {
+    margin-top: 107px;
+    margin-left: -55px;
+}
+
+.dots div {
+    height: 50px;
+    width: 50px;
+    margin-top: 48px;
+    border-radius: 30px;
+}
+
+.num-0 div, .num-9 div, .num-8 div {
+    opacity: 1;
+}
+
+.num-1 .ver.right.up, .num-1 .ver.right.low {
+    opacity: 1;
+}
+
+.num-3 .ver.right.low, .num-2 .ver.right.up, .num-3 .ver.right.up, .num-7 .ver.right.up {
+    opacity: 1;
+}
+
+.num-4 .ver.right.up, .num-4 .ver.right.low {
+    opacity: 1;
+}
+
+.num-5 .ver.right.low, .num-7 .ver.right.low, .num-6 .ver.right.low, .num-2 .hor.top, .num-7 .hor.top, .num-3 .hor.top, .num-6 .hor.top, .num-5 .hor.top, .num-2 .hor.mid, .num-3 .hor.mid, .num-4 .hor.mid, .num-6 .hor.mid, .num-5 .hor.mid, .num-2 .ver.left.low, .num-6 .ver.left.low, .num-4 .ver.left.up, .num-5 .ver.left.up, .num-6 .ver.left.up, .num-2 .hor.low, .num-3 .hor.low, .num-5 .hor.low, .num-6 .hor.low, .dots div {
+    opacity: 1;
+}
+
+#defaultSlider {
+    width: 100px;
+}
+
+.zoom {
+    float: left;
+}

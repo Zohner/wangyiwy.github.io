@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #222;
+}
+
+
+.clock {
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    color: #f9f9f9;
+    position: absolute;
+    top: 242px;
+    left: 180px;
+    width: 162px;
+}
+
+.rings {
+    position: relative;
+    width: 500px;
+    margin: 100px auto;
+}
+
+.rings .h {
+    position: absolute;
+    left: 10px;
+    top: 10px
+}
+
+.rings .m {
+    position: absolute;
+    left: 85px;
+    top: 85px
+}
+
+.rings .s {
+    position: absolute;
+    left: 163px;
+    top: 163px
+}
+
+.demo {
+    background: #222;
+    height: 700px;
+    width: 100%
+}
+
+input {
+    display: none;
+}

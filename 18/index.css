@@ -1,0 +1,54 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #111;
+}
+
+#display {
+    width: 100%;
+    height: 400px;
+}
+
+#screen {
+    width: 1200px;
+    padding: 6% 0;
+    margin: 0 auto
+}
+
+.letter {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    padding: 40px 20px;
+}
+
+.letter.hours .bit.filled {
+    background: #FF4136
+}
+
+.letter.minutes .bit.filled {
+    background: #FFDC00
+}
+
+.letter.seconds .bit.filled {
+    background: #01FF70
+}
+
+.letter.colons .bit.filled {
+    background: #0074D9
+}
+
+.bit {
+    display: inline-block;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%
+}
