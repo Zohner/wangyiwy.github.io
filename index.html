@@ -14,25 +14,21 @@
             padding: 20px;
         }
 
-        ul {
-            list-style: none;
-        }
-
         .clocks {
+            list-style: none;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 10px;
-        }
-
-        .clocks li {
-            border-radius: 3px;
-            background: white;
         }
 
         .clocks img {
             display: block;
             max-width: 100%;
             height: auto;
+        }
+
+        .clocks img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -62,7 +58,7 @@
 </ul>
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?dd5da61f99cf8f45100cca664cb930ef";
         var s = document.getElementsByTagName("script")[0];
