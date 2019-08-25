@@ -1,23 +1,24 @@
-## Source Code
-
-- 0:[https://codepen.io/amirrezajef/pen/NEoJKd](https://codepen.io/amirrezajef/pen/NEoJKd)
-- 1:[https://codepen.io/jkantner/pen/KQaZdp](https://codepen.io/jkantner/pen/KQaZdp)
-- 2:[https://codepen.io/ge1doot/pen/EaOxvR](https://codepen.io/ge1doot/pen/EaOxvR)
-- 3:[https://codepen.io/astuteape/pen/QXQZmM](https://codepen.io/astuteape/pen/QXQZmM)
-- 4:[https://codepen.io/museum404/pen/FsGtu](https://codepen.io/museum404/pen/FsGtu)
-- 5:[https://codepen.io/eehayman/pen/jVPKpN](https://codepen.io/eehayman/pen/jVPKpN)
-- 6:[https://codepen.io/mikehobizal/pen/RNjREN](https://codepen.io/mikehobizal/pen/RNjREN)
-- 7:[https://codepen.io/tmrDevelops/pen/VYKyge](https://codepen.io/tmrDevelops/pen/VYKyge)
-- 8:[https://codepen.io/Zuzana/pen/mMbzvY](https://codepen.io/Zuzana/pen/mMbzvY)
-- 9:[https://codepen.io/Hammertime38/pen/crtEg](https://codepen.io/Hammertime38/pen/crtEg)
-- 10:[https://codepen.io/paulnoble/pen/NqxdLm](https://codepen.io/paulnoble/pen/NqxdLm)
-- 11:[http://www.jacopocolo.com/hexclock/](http://www.jacopocolo.com/hexclock/)
-- 12:[https://codepen.io/marcosmou/pen/qNPYzb](https://codepen.io/marcosmou/pen/qNPYzb)
-- 13:[https://codepen.io/andysteaua/pen/FtEIK](https://codepen.io/andysteaua/pen/FtEIK)
-- 14:[https://codepen.io/aamirafridi/pen/wgoiC](https://codepen.io/aamirafridi/pen/wgoiC)
-- 15:[https://codepen.io/ahmadbassamemran/pen/WdKQyx](https://codepen.io/ahmadbassamemran/pen/WdKQyx)
-- 16:[https://codepen.io/chrisota/pen/LERyjb](https://codepen.io/chrisota/pen/LERyjb)
-- 17:[https://codepen.io/nilsynils/pen/EZzyVB](https://codepen.io/nilsynils/pen/EZzyVB)
-- 18:[https://codepen.io/Wujek_Greg/pen/KRXYpg](https://codepen.io/Wujek_Greg/pen/KRXYpg)
-- 19:[https://codepen.io/tstoik/pen/gaawRR](https://codepen.io/tstoik/pen/gaawRR)
-- 20:[https://codepen.io/stix/pen/mVXypr](https://codepen.io/stix/pen/mVXypr)
+## CSS and JavaScript Clocks
+|  Preview   | Source Code  |
+|  ----  | ----  |
+| ![](0/screenshot.png)  | [https://codepen.io/amirrezajef/pen/NEoJKd](https://codepen.io/amirrezajef/pen/NEoJKd) |
+| ![](1/screenshot.png)  | [https://codepen.io/jkantner/pen/KQaZdp](https://codepen.io/jkantner/pen/KQaZdp) |
+| ![](2/screenshot.png)  | [https://codepen.io/ge1doot/pen/EaOxvR](https://codepen.io/ge1doot/pen/EaOxvR) |
+| ![](3/screenshot.png)  | [https://codepen.io/astuteape/pen/QXQZmM](https://codepen.io/astuteape/pen/QXQZmM) |
+| ![](4/screenshot.png)  | [https://codepen.io/museum404/pen/FsGtu](https://codepen.io/museum404/pen/FsGtu) |
+| ![](5/screenshot.png)  | [https://codepen.io/eehayman/pen/jVPKpN](https://codepen.io/eehayman/pen/jVPKpN) |
+| ![](6/screenshot.png)  | [https://codepen.io/mikehobizal/pen/RNjREN](https://codepen.io/mikehobizal/pen/RNjREN) |
+| ![](7/screenshot.png)  | [https://codepen.io/tmrDevelops/pen/VYKyge](https://codepen.io/tmrDevelops/pen/VYKyge) |
+| ![](8/screenshot.png)  | [https://codepen.io/Zuzana/pen/mMbzvY](https://codepen.io/Zuzana/pen/mMbzvY) |
+| ![](9/screenshot.png)  | [https://codepen.io/Hammertime38/pen/crtEg](https://codepen.io/Hammertime38/pen/crtEg) |
+| ![](10/screenshot.png)  | [https://codepen.io/paulnoble/pen/NqxdLm](https://codepen.io/paulnoble/pen/NqxdLm) |
+| ![](11/screenshot.png)  | [http://www.jacopocolo.com/hexclock/](http://www.jacopocolo.com/hexclock/) |
+| ![](12/screenshot.png)  | [https://codepen.io/marcosmou/pen/qNPYzb](https://codepen.io/marcosmou/pen/qNPYzb) |
+| ![](13/screenshot.png)  | [https://codepen.io/andysteaua/pen/FtEIK](https://codepen.io/andysteaua/pen/FtEIK) |
+| ![](14/screenshot.png)  | [https://codepen.io/aamirafridi/pen/wgoiC](https://codepen.io/aamirafridi/pen/wgoiC) |
+| ![](15/screenshot.png)  | [https://codepen.io/ahmadbassamemran/pen/WdKQyx](https://codepen.io/ahmadbassamemran/pen/WdKQyx) |
+| ![](16/screenshot.png)  | [https://codepen.io/chrisota/pen/LERyjb](https://codepen.io/chrisota/pen/LERyjb) |
+| ![](17/screenshot.png)  | [https://codepen.io/nilsynils/pen/EZzyVB](https://codepen.io/nilsynils/pen/EZzyVB) |
+| ![](18/screenshot.png)  | [https://codepen.io/Wujek_Greg/pen/KRXYpg](https://codepen.io/Wujek_Greg/pen/KRXYpg) |
+| ![](19/screenshot.png)  | [https://codepen.io/tstoik/pen/gaawRR](https://codepen.io/tstoik/pen/gaawRR) |
+| ![](20/screenshot.png)  | [https://codepen.io/stix/pen/mVXypr](https://codepen.io/stix/pen/mVXypr) |
